@@ -3,3 +3,26 @@
     color: white;
   }
 }
+
+.login-bg{
+  background-image: url('https://pixabay.com/get/g7a1c4c8b17d49474077a14ccc3c95d91300796675821b8c654f6c1fd9d30f2e84909d436da6f85ae6276d9250bece9ef_640.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+.overlay{
+  background-color: rgba(61,105,255,0.44);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.form{
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+}
