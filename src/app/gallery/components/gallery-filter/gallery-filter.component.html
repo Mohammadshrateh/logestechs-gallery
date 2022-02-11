@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayoutAlign="space-between stretch" >
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select (selectionChange)="updateFilter()" [(ngModel)]="category">
+        <mat-option *ngFor="let o of options" [value]="o.value">
+          {{o.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Search...</mat-label>
+      <input matInput type="text" [(ngModel)]="search">
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="updateSearchTerm()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>

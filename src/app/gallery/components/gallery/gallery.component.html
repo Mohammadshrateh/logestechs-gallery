@@ -1,0 +1,15 @@
+<div class="gallery">
+  <app-gallery-filter (onFilterChange)="updateGallery($event)"></app-gallery-filter>
+  <div style="height: calc(100% - 140px);width: 100%">
+    <div fxLayout="row wrap" fxLayoutGap fxFlex>
+      <ng-container *ngFor="let image of imageList | async">
+        <app-image style="height: 33%;width: 33%;" [data]="image" ></app-image>
+      </ng-container>
+    </div>
+
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <app-gallery-pagination [totalNumberOfPages]="6" (onPageChange)="paginationChanged($event)"></app-gallery-pagination>
+  </div>
+</div>

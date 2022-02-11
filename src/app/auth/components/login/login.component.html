@@ -1,0 +1,50 @@
+<div style="height: 100%;background-color: rgba(61,105,255,0.44)">
+  <div fxLayout="column" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column" fxLayoutAlign="center center" style="margin-bottom: 30px">
+      <div class="title-text">
+        <h3>Let's get started now!</h3>
+      </div>
+      <div class="title-text">
+        <span>Or <b>create an account</b> if not registered yet</span>
+      </div>
+    </div>
+
+    <mat-card>
+
+      <div fxLayout="column" fxLayoutAlign="center center" style="margin-bottom: 30px">
+        <form class="example-form">
+          <div fxLayout="column" fxLayoutAlign="center stretch" style="margin-bottom: 30px">
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input  [type]="hide ? 'password' : 'text'" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. pat@example.com" >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+              Please enter the password
+            </mat-error>
+
+          </mat-form-field>
+          </div>
+        </form>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+
+      </div>
+    </mat-card>
+
+  </div>
+</div>
